@@ -15,12 +15,13 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
-    @action(methods=["post"], detail=True, url_path="up-vote")
+    @action(methods=["patch"], detail=True, url_path="up-vote")
     def up_vote(self, request, pk=None):
         post = get_object_or_404(Post, id=pk)
         post.up_votes_amount += 1
         post.save()
-        return Response("Created", status=201)
+        serializer = PostSerializer(post)
+        return Response(serializer.data, status=200)
 
 
 class CommentViewSet(viewsets.ModelViewSet):

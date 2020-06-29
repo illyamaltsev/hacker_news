@@ -1,0 +1,1 @@
+0 0 * * * root /usr/local/bin/python /code/manage.py reset_up_vote >> /var/log/cron.log
