@@ -15,12 +15,12 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 
-    @action(methods=['post'], detail=True, url_path='up-vote')
+    @action(methods=["post"], detail=True, url_path="up-vote")
     def up_vote(self, request, pk=None):
         post = get_object_or_404(Post, id=pk)
         post.up_votes_amount += 1
         post.save()
-        return Response('Created', status=201)
+        return Response("Created", status=201)
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -30,12 +30,12 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Comment.objects.all()
 
-        post_id = self.request.query_params.get('post_id', None)
+        post_id = self.request.query_params.get("post_id", None)
 
         if post_id is not None:
             queryset = queryset.filter(post__id=post_id)
         return queryset
 
     def perform_create(self, serializer):
-        post = get_object_or_404(Post, id=self.request.data.get('post_id'))
+        post = get_object_or_404(Post, id=self.request.data.get("post_id"))
         return serializer.save(post=post)

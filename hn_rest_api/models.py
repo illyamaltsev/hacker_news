@@ -15,8 +15,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('hn_rest_api.Post', on_delete=models.CASCADE,
-                             related_name='comments')
+    post = models.ForeignKey(
+        "hn_rest_api.Post", on_delete=models.CASCADE, related_name="comments"
+    )
 
     author_name = models.CharField(max_length=200)
     content = models.TextField()

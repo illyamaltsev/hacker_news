@@ -6,7 +6,7 @@ app_name = "hn_rest_api"
 
 router = DefaultRouter()
 
-router.register(r'posts', PostViewSet, basename='post')
-router.register(r'comments', CommentViewSet, basename='comment')
+router.register(r"posts", PostViewSet, basename="post")
+router.register(r"comments", CommentViewSet, basename="comment")
 
 urlpatterns = router.urls
