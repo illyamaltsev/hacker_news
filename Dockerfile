@@ -14,14 +14,7 @@ RUN pipenv install --system
 
 COPY . /code/
 
-# Copy hello-cron file to the cron.d directory
+# Setup cron schedules from file cron_lines
 COPY cron_lines /etc/cron.d/cron_lines
-
-# Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/cron_lines
-
-# Apply cron job
 RUN crontab /etc/cron.d/cron_lines
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log

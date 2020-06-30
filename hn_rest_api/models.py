@@ -3,7 +3,7 @@ from django.db import models
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    link = models.CharField(max_length=200)
+    link = models.URLField(max_length=200)
     author_name = models.CharField(max_length=200)
 
     up_votes_amount = models.IntegerField(default=0)
