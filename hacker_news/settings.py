@@ -24,7 +24,7 @@ SECRET_KEY = "%=ad)yncp#1i9adm(=eo!90tg0*gu2i=8$zn+_2v2k9xmpo2=f"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
