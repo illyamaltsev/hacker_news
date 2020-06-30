@@ -14,7 +14,7 @@
 
     ```docker-compose up -d --build```
     
-    *Or use ```docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d``` in production*
+    *Or use ```docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build``` in production*
 
 ### Postman
 
