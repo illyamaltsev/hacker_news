@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
-    help = ''
+    help = ""
 
     def handle(self, *args, **options):
         posts = Post.objects.all()
@@ -15,5 +15,5 @@ class Command(BaseCommand):
             post.up_votes_amount = 0
             post.save()
 
-        logger.info('Posts vote reset')
-        print('ready')
+        logger.info("Posts vote reset")
+        print("ready")
