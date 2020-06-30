@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv(
     "SECRET_KEY", "%=ad)yncp#1i9adm(=eo!90tg0*gu2i=8$zn+_2v2k9xmpo2=f"
 )
