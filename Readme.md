@@ -1,17 +1,18 @@
 ### Quick start
 
-0. Install [Docker](https://www.docker.com/)
+1. Install [Docker](https://www.docker.com/)
 
-1. Migrate db
+2. Migrate db
 
-```docker-compose run web python /code/manage.py migrate --noinput```
-2. Create admin user
+    ```docker-compose run web python /code/manage.py migrate --noinput```
 
-```docker-compose run web python /code/manage.py createsuperuser```
+3. Create admin user
 
-3. Run server
+    ```docker-compose run web python /code/manage.py createsuperuser```
 
-```docker-compose up -d --build```
+4. Run server
+
+    ```docker-compose up -d --build```
 
 ### Postman
 
