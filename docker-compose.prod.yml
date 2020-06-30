@@ -1,0 +1,5 @@
+version: '3.7'
+services:
+  web:
+    command: >
+          bash -c "cron && python /code/manage.py runserver --settings=hacker_news.settings.production 0.0.0.0:8000"
