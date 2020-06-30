@@ -9,6 +9,8 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    up_votes_amount = serializers.ReadOnlyField()
+
     class Meta:
         model = Post
         fields = (
@@ -22,6 +24,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class PostWithCommentsSerializer(serializers.ModelSerializer):
+    up_votes_amount = serializers.ReadOnlyField()
     comments = CommentSerializer(many=True, read_only=True)
 
     class Meta:
